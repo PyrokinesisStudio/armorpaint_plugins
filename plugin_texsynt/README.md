@@ -5,7 +5,7 @@ https://github.com/EmbarkStudios/texture-synthesis
 Rust Notes:
 - Run `cargo install wasm-pack`.
 - In `Cargo.toml`:
-```
+```toml
 [lib]
 crate-type = ["cdylib"]
 
@@ -15,7 +15,7 @@ wasm-bindgen = "0.2"
 - No threading for rust->wasm yet. :( Comment out [#1](https://github.com/EmbarkStudios/texture-synthesis/blob/cd3ca527e8319072b09597ba22d32f71dec44280/lib/src/multires_stochastic_texture_synthesis.rs#L783) and [#2](https://github.com/EmbarkStudios/texture-synthesis/blob/cd3ca527e8319072b09597ba22d32f71dec44280/lib/src/multires_stochastic_texture_synthesis.rs#L785).
 - `wasm-pack build` to build.
 - C-like / unsafe Rust bindings prototype (do not do this, proof of concept only):
-```rs
+```rust
 extern crate wasm_bindgen;
 use wasm_bindgen::prelude::*;
 
