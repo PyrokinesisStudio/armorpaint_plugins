@@ -2,7 +2,22 @@
 
 https://github.com/EmbarkStudios/texture-synthesis
 
-Rust Notes:
+### Usage
+
+###### Generating tiling texture:
+- Clone or [download](https://github.com/armory3d/armorpaint_plugins/archive/master.zip) this repository.
+- Copy files from `/plugin_texsynt` into `ArmorPaint/data/plugins`.
+- Run ArmorPaint, go to `Plugins tab - Manager` and enable `texsynt` plugin.
+- Open `Nodes` editor.
+- `Base Color` socket is used to specify input image.
+- `Occlusion` socket is used to specify borders mask. A bundled `texsynt_tile.jpg` image can be used.
+- Open layer `2D View` and fill it using `Fill Tool`.
+- Click `Plugins - Texture Synthesis - Make Tiling`. Depending on texture and cpu speed, this can take several minutes! Expect a speedup once rust->wasm threading is supported.
+- A new tiling texture will be generated and placed in the `Textures tab`. This texture can now be used inside ArmorPaint or exported by right-clicking on the texture and clicking `Export`.
+
+![](readme.jpg)
+
+### Notes on Compiling Rust to Wasm:
 - Run `cargo install wasm-pack`.
 - In `Cargo.toml`:
 ```toml
